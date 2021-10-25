@@ -9,7 +9,7 @@ namespace Player
         private Rigidbody2D Rb => GetComponent<Rigidbody2D>();
         private Transform transform;
 
-        private bool isGrounded;
+        public bool IsGrounded { get; set; }
         private void Awake()
         {
             this.transform = GetComponent<Transform>();
@@ -33,18 +33,18 @@ namespace Player
 
         private void CheckForActionInput()
         {
-            if (Input.GetAxis("Jump") > 0 && isGrounded)
+            if (Input.GetAxis("Jump") > 0 && IsGrounded)
             {
-                isGrounded = false;
+                IsGrounded = false;
                 Rb.AddForce(new Vector2(0, jumpForce));
             }
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (!other.gameObject.CompareTag("Ground"))
-                return;
-            isGrounded = true;
-        }
+        // private void OnCollisionStay2D(Collision2D other)
+        // {
+        //     if (!other.gameObject.CompareTag("Ground"))
+        //         return;
+        //     IsGrounded = true;
+        // }
     }
 }
