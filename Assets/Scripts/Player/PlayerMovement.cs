@@ -6,13 +6,18 @@ namespace Player
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private float jumpForce;
+
+        [SerializeField] private AudioClip jumpSFX;
+        
         private Rigidbody2D Rb => GetComponent<Rigidbody2D>();
         private Transform transform;
+        private AudioSource audioSource;
 
         public bool IsGrounded { get; set; }
         private void Awake()
         {
             this.transform = GetComponent<Transform>();
+            this.audioSource = GetComponent<AudioSource>();
         }
 
         private void FixedUpdate()
@@ -35,16 +40,12 @@ namespace Player
         {
             if (Input.GetAxis("Jump") > 0 && IsGrounded)
             {
+                if(audioSource != null && jumpSFX != null)
+                    audioSource.PlayOneShot(jumpSFX);
+                
                 IsGrounded = false;
                 Rb.AddForce(new Vector2(0, jumpForce));
             }
         }
-
-        // private void OnCollisionStay2D(Collision2D other)
-        // {
-        //     if (!other.gameObject.CompareTag("Ground"))
-        //         return;
-        //     IsGrounded = true;
-        // }
     }
 }
