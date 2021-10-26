@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2846e409884390b735e5649320dd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antiGravityAreaObject: {fileID: 0}
+  antiGravityAreaObject: {fileID: 2199063349035243642, guid: b73848e2654000f4a91019618cf8a079, type: 3}
   potionType: 3
 --- !u!1 &7763918457582637853
 GameObject:
