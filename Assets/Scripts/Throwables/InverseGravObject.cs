@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -31,15 +30,7 @@ namespace Throwables
             
             rb2d.AddForce(new Vector2(0, antiGravForce));
         }
-
-        private void OnTriggerStay(Collider other)
-        {
-            if (rb2d == null)
-                return;
-            
-            rb2d.AddForce(new Vector2(0, 1 + (antiGravForce * Time.fixedDeltaTime)));
-        }
-
+        
         private void OnTriggerExit2D(Collider2D other)
         {
             if (!other.gameObject.CompareTag("Player"))
