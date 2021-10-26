@@ -5,7 +5,6 @@ namespace Throwables
     public class GrowPotion : MonoBehaviour, IPotion
     {
         [SerializeField] private float growValue;
-        [SerializeField] private float radius;
         public IPotion.PotionType potionType;
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -13,12 +12,8 @@ namespace Throwables
             if (potionType != IPotion.PotionType.Grow)
                 return;
             
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, radius);
-            foreach (var collider in hitColliders)
-            {
-                if (collider.GetComponent<GrowShrinkObject>() != null)
-                    collider.GetComponent<GrowShrinkObject>().ModifyValue(growValue);
-            }
+            if (other.gameObject.GetComponent<GrowShrinkObject>() != null)
+                other.gameObject.GetComponent<GrowShrinkObject>().ModifyValue(growValue);
         }
     }
 }

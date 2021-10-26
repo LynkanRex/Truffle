@@ -9,6 +9,7 @@ namespace Throwables
         public void ModifyValue(float val)
         {
             currentVal += val;
+            Debug.Log("My value is now " + currentVal);
         }
     }
 }
