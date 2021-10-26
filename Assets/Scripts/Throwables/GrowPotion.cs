@@ -14,6 +14,8 @@ namespace Throwables
             
             if (other.gameObject.GetComponent<GrowShrinkObject>() != null)
                 other.gameObject.GetComponent<GrowShrinkObject>().ModifyValue(growValue);
+            
+            Destroy(this.gameObject);
         }
     }
 }
