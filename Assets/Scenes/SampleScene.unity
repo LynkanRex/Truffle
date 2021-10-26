@@ -666,6 +666,9 @@ MonoBehaviour:
   throwPoint: {fileID: 1146302206}
   throwables:
   - {fileID: 525026350096679369, guid: 7bb522cca7624f943ab2d600bfa192cc, type: 3}
+  - {fileID: 525026350096679369, guid: 8f1fbaab3578a634ebc20151d163387b, type: 3}
+  - {fileID: 525026350096679369, guid: cfd9e41cee8bf244da0445c97a19fa47, type: 3}
+  - {fileID: 525026350096679369, guid: fd9e2dded4388224e8e597e8aff38a3c, type: 3}
   throwingPower: 300
 --- !u!1 &519420028
 GameObject:
