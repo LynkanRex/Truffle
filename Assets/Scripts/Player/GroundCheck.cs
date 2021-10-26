@@ -4,10 +4,8 @@ namespace Player
 {
     public class GroundCheck : MonoBehaviour
     {
-    
         private PlayerMovement playerController;
-    
-        // Start is called before the first frame update
+        
         void Start()
         {
             playerController = GetComponentInParent<PlayerMovement>();
